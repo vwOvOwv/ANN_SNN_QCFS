@@ -5,8 +5,8 @@ import warnings
 import torch.nn as nn
 import torch.nn.parallel
 import torch.optim
-from models import modelpool
-from preprocess import datapool
+from Models import modelpool
+from Preprocess import datapool
 from utils import train, val, seed_all, get_logger
 
 parser = argparse.ArgumentParser(description='PyTorch Training')
@@ -36,7 +36,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 def main():
     global args
     seed_all(args.seed)
-    # preparing data
+    # preparing data 
     train_loader, test_loader = datapool(args.dataset, args.batch_size)
     # preparing model
     model = modelpool(args.model, args.dataset)

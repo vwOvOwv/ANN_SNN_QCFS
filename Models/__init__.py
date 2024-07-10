@@ -9,6 +9,7 @@ def modelpool(MODELNAME, DATANAME):
         num_classes = 100
     else:
         num_classes = 10
+        
     if MODELNAME.lower() == 'vgg16':
         return vgg16(num_classes=num_classes)
     elif MODELNAME.lower() == 'vgg16_wobn':
